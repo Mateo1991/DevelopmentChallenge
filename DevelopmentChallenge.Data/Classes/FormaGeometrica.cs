@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DevelopmentChallenge.Data.enums;
-using Microsoft.SqlServer.Server;
 
 namespace DevelopmentChallenge.Data.Classes
 {

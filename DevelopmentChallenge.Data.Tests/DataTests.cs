@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DevelopmentChallenge.Data.Classes;
 using DevelopmentChallenge.Data.enums;
 using NUnit.Framework;
@@ -12,7 +11,7 @@ namespace DevelopmentChallenge.Data.Tests
         [TestCase]
         public void TestResumenListaVacia()
         {
-            Assert.AreEqual("<h1>Lista vacía de formas!</h1>",
+             Assert.AreEqual("<h1>Lista vacía de formas!</h1>",
                 FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 1));
         }
 
@@ -24,6 +23,13 @@ namespace DevelopmentChallenge.Data.Tests
         }
 
         [TestCase]
+        public void TestResumenListaVaciaFormasEnItaliano()
+        {
+            Assert.AreEqual("<h1>Elenco vuoto di forme!</h1>",
+                FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 2));
+        }
+
+        [TestCase]
         public void TestResumenListaConUnCuadrado()
         {
             var cuadrados = new List<FormaGeometrica> {new Cuadrado(5, "Cuadrado") };
@@ -31,6 +37,26 @@ namespace DevelopmentChallenge.Data.Tests
             var resumen = FormaGeometrica.Imprimir(cuadrados, (int)Idioma.Castellano);
 
             Assert.AreEqual("<h1>Reporte de Formas</h1>1 Cuadrado | Area 25 | Perimetro 20 <br/>TOTAL:<br/>1 formas Perimetro 20 Area 25", resumen);
+        }
+
+        [TestCase]
+        public void TestResumenListaConUnRectangulo()
+        {
+            var rectangulos = new List<FormaGeometrica> { new Rectangulo(1, 2, "Rectangulo") };
+
+            var resumen = FormaGeometrica.Imprimir(rectangulos, (int)Idioma.Castellano);
+
+            Assert.AreEqual("<h1>Reporte de Formas</h1>1 Rectangulo | Area 2 | Perimetro 6 <br/>TOTAL:<br/>1 formas Perimetro 2 Area 6", resumen);
+        }
+
+        [TestCase]
+        public void TestResumenListaConUnRectanguloIngles()
+        {
+            var rectangulos = new List<FormaGeometrica> { new Rectangulo(1, 2, "Rectangulo") };
+
+            var resumen = FormaGeometrica.Imprimir(rectangulos, (int)Idioma.Ingles);
+
+            Assert.AreEqual("<h1>Shapes report</h1>1 Rectangulo | Area 2 | Perimeter 6 <br/>TOTAL:<br/>1 shapes Perimeter 2 Area 6", resumen);
         }
 
         [TestCase]
