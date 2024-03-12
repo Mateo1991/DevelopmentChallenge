@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevelopmentChallenge.Data.Classes
+namespace DevelopmentChallenge.Data.enums
 {
-    public class Triangulo : FormaGeometrica
+    public enum Idioma
     {
+        Castellano = 1,
+        Ingles = 2,
+        Italiano = 3
     }
 }

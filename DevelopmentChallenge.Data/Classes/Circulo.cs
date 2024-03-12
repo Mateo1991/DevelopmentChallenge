@@ -1,12 +1,13 @@
 ﻿using DevelopmentChallenge.Data.enums;
+using System;
 
 namespace DevelopmentChallenge.Data.Classes
 {
-    public class Cuadrado : FormaGeometrica
+    public class Circulo : FormaGeometrica
     {
         private decimal _lado;
 
-        public Cuadrado(decimal lado, string nombre)
+        public Circulo(decimal lado, string nombre)
         {
             this._lado = lado;
             this._nombre = nombre;
@@ -14,12 +15,13 @@ namespace DevelopmentChallenge.Data.Classes
 
         public override decimal CalcularArea()
         {
-            return _lado * _lado;
+            return ((decimal)Math.Sqrt(3) / 4) * _lado * _lado;
         }
 
         public override decimal CalcularPerimetro()
         {
-            return _lado * 4;
+            return _lado * 3;
         }
     }
 }
+
