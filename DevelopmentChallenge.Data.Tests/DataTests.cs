@@ -60,6 +60,16 @@ namespace DevelopmentChallenge.Data.Tests
         }
 
         [TestCase]
+        public void TestResumenListaConUnRectanguloItaliano()
+        {
+            var rectangulos = new List<FormaGeometrica> { new Rectangulo(1, 2, "Rectangulo") };
+
+            var resumen = FormaGeometrica.Imprimir(rectangulos, (int)Idioma.Italiano);
+
+            Assert.AreEqual("<h1>Rapporto sui moduli</h1>1 Rettangolo | La zona 2 | Perimetro 6 <br/>TOTAL:<br/>1 shapes PeriPerimetrometer 2 La zona 6", resumen);
+        }
+
+        [TestCase]
         public void TestResumenListaConMasCuadrados()
         {
             var cuadrados = new List<FormaGeometrica>
